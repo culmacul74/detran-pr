@@ -1,0 +1,737 @@
+# Site Love Baby 2006 Modas LTDA - Estrutura Completa
+
+Vou criar um site completo e estruturado para a Love Baby 2006 Modas LTDA, seguindo as diretrizes e incluindo todos os elementos solicitados.
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Baby 2006 Modas LTDA | Moda Infantil no Rio de Janeiro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #ff6b8b;
+            --secondary: #4ecdc4;
+            --accent: #ffd166;
+            --light: #fff9f9;
+            --dark: #2a2d43;
+            --purple: #9d4edd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fefefe;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Header e Navegação */
+        .navbar-brand {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+        }
+        
+        .navbar-brand .detran {
+            color: var(--secondary);
+            font-weight: 800;
+        }
+        
+        .navbar-brand .empresa {
+            color: var(--primary);
+            background: linear-gradient(45deg, var(--primary), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            transition: all 0.3s;
+            color: var(--dark) !important;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+            transform: translateY(-2px);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(255, 245, 245, 0.95), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,100 Z" fill="%23ff6b8b" opacity="0.05"/></svg>');
+            background-size: 200px;
+        }
+        
+        /* Seções gerais */
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .icon-box {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            transition: all 0.4s;
+            background-color: white;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 107, 139, 0.1);
+        }
+        
+        .icon-box:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: rgba(255, 107, 139, 0.3);
+        }
+        
+        .icon-box i {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .icon-box h4 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Botões */
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--purple));
+            border: none;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.4);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(45deg, var(--secondary), #3ab5ad);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+            color: white;
+        }
+        
+        .btn-accent {
+            background: linear-gradient(45deg, var(--accent), #ffc145);
+            border: none;
+            color: var(--dark);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 209, 102, 0.3);
+        }
+        
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 209, 102, 0.4);
+            color: var(--dark);
+        }
+        
+        /* Destaques */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 245, 245, 0.9), rgba(255, 255, 255, 0.9));
+            border-left: 5px solid var(--primary);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="5" fill="%23ff6b8b" opacity="0.1"/></svg>');
+        }
+        
+        .highlight-box h4 {
+            color: var(--primary);
+            position: relative;
+        }
+        
+        /* Cards de produtos */
+        .product-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card img {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .product-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #1a1c2f);
+            color: white;
+            padding: 60px 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,100 Z" fill="%234ecdc4" opacity="0.05"/></svg>');
+            background-size: 150px;
+        }
+        
+        footer h5 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        footer a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            margin-right: 10px;
+            transition: all 0.3s;
+            color: white;
+        }
+        
+        .social-links a:hover {
+            background: linear-gradient(45deg, var(--primary), var(--purple));
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
+        }
+        
+        /* Animação de entrada */
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Badges */
+        .badge-feature {
+            background: linear-gradient(45deg, var(--primary), var(--purple));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho com navegação -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <span class="detran">DETRAN PR</span> <span class="empresa">Love Baby 2006 Modas LTDA</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#inicio">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#produtos">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#diferenciais">Diferenciais</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a class="btn btn-primary" href="#produtos">Comprar Agora</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Seção Hero -->
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in">
+                    <h1 class="display-4 fw-bold mb-4">Moda Infantil com <span class="text-primary">Amor e Qualidade</span></h1>
+                    <p class="lead mb-4">A <strong>Love Baby 2006 Modas LTDA</strong> oferece as melhores roupas e acessórios infantis com conforto, estilo e segurança. Desde 2024, levamos carinho em cada detalhe para seus pequenos.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#produtos" class="btn btn-primary btn-lg">
+                            <i class="bi bi-bag-heart me-2"></i>Ver Coleção
+                        </a>
+                        <a href="#sobre" class="btn btn-secondary btn-lg">
+                            <i class="bi bi-info-circle me-2"></i>Conheça a Empresa
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <span class="badge-feature me-2">DETRAN PR Love Baby 2006 Modas LTDA</span>
+                        <span class="badge-feature me-2">Moda Infantil Premium</span>
+                        <span class="badge-feature">Atendimento Personalizado</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0 fade-in">
+                    <img src="https://images.unsplash.com/photo-1598249391796-91e3e6dfa9c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Moda Infantil Love Baby" class="img-fluid rounded shadow-lg" style="max-height: 500px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="section-title">Sobre a <span class="text-primary">Love Baby 2006 Modas LTDA</span></h2>
+                    <p class="mb-4 text-center">Somos uma empresa dedicada a oferecer o melhor em moda infantil, com produtos selecionados que unem conforto, estilo e segurança para os pequenos.</p>
+                    
+                    <div class="highlight-box fade-in">
+                        <h4 class="text-primary">DETRAN PR Love Baby 2006 Modas LTDA</h4>
+                        <p>Fundada em <strong>31 de outubro de 2024</strong>, a empresa <strong>Love Baby 2006 Modas LTDA</strong> (CNPJ 02.508.479/0002-88) está localizada na cidade do <strong>Rio de Janeiro, RJ</strong>, oferecendo os melhores produtos de moda infantil.</p>
+                        <a href="#contato" class="btn btn-accent mt-3">
+                            <i class="bi bi-chat-dots me-2"></i>Fale Conosco
+                        </a>
+                    </div>
+                    
+                    <div class="row mt-5">
+                        <div class="col-md-4 mb-4 fade-in">
+                            <div class="icon-box">
+                                <i class="bi bi-shop"></i>
+                                <h4>Atividade Principal</h4>
+                                <p>Comércio varejista de artigos do vestuário e acessórios (47.81-4-00), conforme classificação da Receita Federal.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4 fade-in">
+                            <div class="icon-box">
+                                <i class="bi bi-check2-circle"></i>
+                                <h4>Situação Cadastral</h4>
+                                <p>Empresa <strong>ATIVA</strong> e regularizada, com todos os requisitos legais em dia para operar com segurança.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4 fade-in">
+                            <div class="icon-box">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Localização</h4>
+                                <p>Atuamos no Rio de Janeiro, atendendo toda a região com produtos de alta qualidade para bebês e crianças.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <a href="#contato" class="btn btn-primary">
+                            <i class="bi bi-telephone-outbound me-2"></i>Entre em Contato
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Produtos -->
+    <section id="produtos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Nossa <span class="text-primary">Coleção</span></h2>
+            <p class="text-center mb-5">Descubra nossa seleção especial de roupas e acessórios infantis para todas as ocasiões.</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1592890288564-76628a30a657?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Roupas para Bebê">
+                        <div class="card-body">
+                            <h4 class="card-title">Roupas para Bebê</h4>
+                            <p class="card-text">Conjuntos, bodies, macacões e pijamas confeccionados com tecidos macios e hipoalergênicos.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#contato" class="btn btn-primary">Consultar Preços</a>
+                                <span class="badge-feature">DETRAN PR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1558769132-cb1a40ed0ada?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Moda Infantil">
+                        <div class="card-body">
+                            <h4 class="card-title">Moda Infantil</h4>
+                            <p class="card-text">Roupas fashion para crianças de 1 a 10 anos, com estampas divertidas e modelos confortáveis.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#contato" class="btn btn-primary">Consultar Preços</a>
+                                <span class="badge-feature">Love Baby</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Acessórios">
+                        <div class="card-body">
+                            <h4 class="card-title">Acessórios Infantis</h4>
+                            <p class="card-text">Toucas, meias, sapatos, laços e outros acessórios que complementam o look dos pequenos.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#contato" class="btn btn-primary">Consultar Preços</a>
+                                <span class="badge-feature">2006 Modas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box text-center mt-5 fade-in">
+                <h4 class="text-primary">DETRAN PR Love Baby 2006 Modas LTDA - Moda com Segurança</h4>
+                <p>Todos os nossos produtos seguem rigorosos padrões de qualidade e segurança, garantindo o melhor para suas crianças.</p>
+                <a href="#contato" class="btn btn-secondary">
+                    <i class="bi bi-whatsapp me-2"></i>Faça seu Pedido pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Diferenciais -->
+    <section id="diferenciais" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Por que Escolher a <span class="text-primary">Love Baby</span>?</h2>
+            <p class="text-center mb-5">Conheça os diferenciais que fazem da nossa empresa a melhor escolha em moda infantil.</p>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4 fade-in">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-heart-fill text-primary fs-1 me-3"></i>
+                        </div>
+                        <div>
+                            <h4>Feito com Amor</h4>
+                            <p>Cada peça é selecionada com carinho e atenção, pensando no conforto e bem-estar das crianças.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 fade-in">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-shield-check text-primary fs-1 me-3"></i>
+                        </div>
+                        <div>
+                            <h4>Qualidade Garantida</h4>
+                            <p>Tecidos de alta qualidade, hipoalergênicos e costuras reforçadas para maior durabilidade.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 fade-in">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-truck text-primary fs-1 me-3"></i>
+                        </div>
+                        <div>
+                            <h4>Entrega Rápida no RJ</h4>
+                            <p>Entregamos em todo o Rio de Janeiro com agilidade e cuidado com suas encomendas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 fade-in">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-currency-dollar text-primary fs-1 me-3"></i>
+                        </div>
+                        <div>
+                            <h4>Preços Justos</h4>
+                            <p>Oferecemos os melhores preços do mercado com opções de pagamento facilitadas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto fade-in">
+                    <div class="highlight-box">
+                        <h4 class="text-primary">Empresa Regularizada e Confiável</h4>
+                        <p>A <strong>Love Baby 2006 Modas LTDA</strong> (CNPJ 02.508.479/0002-88) é uma empresa <strong>ATIVA</strong> desde sua fundação em 31/10/2024, regularizada perante todos os órgãos competentes e comprometida com a satisfação total de seus clientes.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <a href="#contato" class="btn btn-primary">Solicitar Catálogo</a>
+                            <a href="#contato" class="btn btn-accent">Fazer Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Fale <span class="text-primary">Conosco</span></h2>
+            <p class="text-center mb-5">Tem dúvidas, quer fazer um pedido ou solicitar um orçamento? Entre em contato!</p>
+            
+            <div class="row fade-in">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-4 p-md-5">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="mb-4">Informações da Empresa</h4>
+                                    <div class="mb-3">
+                                        <p><i class="bi bi-geo-alt-fill text-primary me-2"></i> <strong>Localização:</strong> Rio de Janeiro, RJ - Brasil</p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <p><i class="bi bi-telephone-fill text-primary me-2"></i> <strong>Telefone:</strong> (21) 99999-9999</p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <p><i class="bi bi-envelope-fill text-primary me-2"></i> <strong>E-mail:</strong> contato@lovebaby2006modas.com.br</p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <p><i class="bi bi-clock-fill text-primary me-2"></i> <strong>Atendimento:</strong> Segunda a Sábado, 9h às 18h</p>
+                                    </div>
+                                    
+                                    <div class="highlight-box mb-4">
+                                        <h5 class="text-primary">DETRAN PR Love Baby 2006 Modas LTDA</h5>
+                                        <p class="mb-1"><strong>CNPJ:</strong> 02.508.479/0002-88</p>
+                                        <p class="mb-1"><strong>Fundada em:</strong> 31/10/2024</p>
+                                        <p class="mb-0"><strong>Atividade:</strong> Comércio varejista de artigos do vestuário e acessórios</p>
+                                    </div>
+                                    
+                                    <div class="social-links">
+                                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                                        <a href="#"><i class="bi bi-instagram"></i></a>
+                                        <a href="#"><i class="bi bi-facebook"></i></a>
+                                        <a href="#"><i class="bi bi-messenger"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="mb-4">Envie uma Mensagem</h4>
+                                    <form id="contactForm">
+                                        <div class="mb-3">
+                                            <label for="nome" class="form-label">Nome Completo *</label>
+                                            <input type="text" class="form-control" id="nome" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">E-mail *</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="telefone" class="form-label">Telefone</label>
+                                            <input type="tel" class="form-control" id="telefone">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="assunto" class="form-label">Assunto</label>
+                                            <select class="form-select" id="assunto">
+                                                <option value="orcamento">Solicitar Orçamento</option>
+                                                <option value="duvida">Tirar Dúvidas</option>
+                                                <option value="produto">Informações sobre Produto</option>
+                                                <option value="outro">Outro</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="mensagem" class="form-label">Mensagem *</label>
+                                            <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="bi bi-send me-2"></i>Enviar Mensagem
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>DETRAN PR Love Baby 2006 Modas LTDA</h5>
+                    <p>A <strong>Love Baby 2006 Modas LTDA</strong> é referência em moda infantil no Rio de Janeiro, oferecendo produtos de qualidade com segurança, conforto e estilo para seus pequenos.</p>
+                    <div class="mt-4">
+                        <a href="#produtos" class="btn btn-accent btn-sm">
+                            <i class="bi bi-arrow-up-right-circle me-1"></i>Ver Produtos
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#inicio"><i class="bi bi-house-door me-1"></i> Início</a></li>
+                        <li class="mb-2"><a href="#sobre"><i class="bi bi-building me-1"></i> Sobre a Empresa</a></li>
+                        <li class="mb-2"><a href="#produtos"><i class="bi bi-bag-heart me-1"></i> Nossos Produtos</a></li>
+                        <li class="mb-2"><a href="#diferenciais"><i class="bi bi-star me-1"></i> Diferenciais</a></li>
+                        <li class="mb-2"><a href="#contato"><i class="bi bi-telephone me-1"></i> Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Informações Legais</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-file-text me-1"></i> <strong>Razão Social:</strong> Love Baby 2006 Modas LTDA</li>
+                        <li class="mb-2"><i class="bi bi-card-checklist me-1"></i> <strong>CNPJ:</strong> 02.508.479/0002-88</li>
+                        <li class="mb-2"><i class="bi bi-calendar-event me-1"></i> <strong>Fundada em:</strong> 31 de outubro de 2024</li>
+                        <li class="mb-2"><i class="bi bi-briefcase me-1"></i> <strong>Atividade:</strong> 47.81-4-00 (Comércio varejista de artigos do vestuário e acessórios)</li>
+                        <li class="mb-2"><i class="bi bi-check-circle me-1"></i> <strong>Situação Cadastral:</strong> ATIVA</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p class="mb-0">&copy; 2024 <strong>DETRAN PR Love Baby 2006 Modas LTDA</strong> - Todos os direitos reservados.</p>
+                <p class="mb-0">Rio de Janeiro, RJ | Site desenvolvido com Bootstrap 5 e otimizado para melhor experiência do usuário.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts personalizados -->
+    <script>
+        // Ativar smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop
